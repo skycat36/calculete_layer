@@ -197,6 +197,7 @@ public class PolynomLejandra {
 
     }
 
+    // Полином Лежандра
     public static double calculatePolinomProizN(double x, int n, int m) throws Exception {
         if (n > arrParamPolinom.size()) throw new Exception("Scale can't be bigger " + arrFunkPolinom.size());
 
@@ -231,6 +232,15 @@ public class PolynomLejandra {
         return result;
     }
 
+    // Производная полинома Лежандра
+    public double calculateDerivativePalindromeLeander(double x, int n, int m)  throws Exception {
+        if (n > arrParamPolinom.size()) throw new Exception("Scale can't be bigger " + arrFunkPolinom.size());
+
+        double multiplierA = n / (1.0 - x * x);
+        return multiplierA * (calculatePolinomProizN(x, n - 1, m) -  x * calculatePolinomProizN(x, n, m));
+    }
+
+    // Присоединённые многочлены Лежандра
     public static double mergePolinomLegandra(double x, int n, int m) throws Exception {
         return Math.pow(-1, m) * Math.pow(1 - Math.pow(x, 2), m / 2.0) * calculatePolinomProizN(x, n, m);
     }
