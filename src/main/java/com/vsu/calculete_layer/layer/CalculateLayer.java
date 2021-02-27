@@ -44,7 +44,6 @@ public class CalculateLayer {
                 if (j == 0){
                     mArrH = 2;
                 }
-                //TODO в методе VariableB.calculateMatrixB часто возвращается 0 и затем происходит деление на 0.
                 result += arrHim.get(i-1).get(mArrH) * (2 * i + 1) / (i * (VariableB.calculateMatrixB(i, 1).get(0).get(0))) *//(VariableB.calculateMatrixB(i, 2) //при 2 происходит деление на 0
                         Math.pow(ConstantService.R_I.get(0)/R1, i+1) * (NormMultiplier.Y(i, j, teta, fi) - NormMultiplier.Y(0, 0, teta, fi));
             }

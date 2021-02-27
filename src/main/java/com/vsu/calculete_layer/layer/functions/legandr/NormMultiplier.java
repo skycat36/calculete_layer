@@ -14,7 +14,6 @@ public class NormMultiplier {
         return result;
     }
 
-    //TODO Есть вероятность деления на 0.
     public static double calculeteAttachedNormMultiplierLegandra(int L, int m){
         int ksi = m == 0 ? 1 : 0;
         return Math.sqrt((2 * L + 1) / ( 2 * Math.PI * (1 + ksi)) * calculateFactDelLegandra(L, m));
@@ -26,7 +25,6 @@ public class NormMultiplier {
         }
 
         double result = 1;
-        //TODO Очень часто происходит деление на 0.
         for (int i = L - Math.abs(m); i < L + Math.abs(m); i++){
             result /= i == 0 ? 1 : i;
         }

@@ -16,13 +16,13 @@ public class Main {
 //        result = result.setScale(16, BigDecimal.ROUND_DOWN);
 //        System.out.println(result);
         StringBuffer writeData = new StringBuffer();
-        int n = 12;
+        int n = 8;
         double R1 = 9.5;
-        double temp = Math.PI / n;
+        double temp = Math.PI / 3;
 
-        for (double i = 0; i < 2*Math.PI; i+=temp){
+        for (double i = 0; i < Math.PI; i+=temp){
             for (double j = 0; j < 2*Math.PI; j+=temp){
-                writeData.append(String.format("Teta[i]: %s, Fi[j]: %s |  x: %s \n",
+                writeData.append(String.format("Teta[i]: %s, Fi[j]: %s |  rez: %s \n",
                         i,
                         j,
                         CalculateLayer.directV(n, i, j, 0.1,0.1,0.1, R1, 2)));
@@ -46,7 +46,8 @@ public class Main {
 
     public static void readToFile(String path, String fileName, String data){
         File file = new File(path + "\\" + fileName);
-        //File file = new File("C:\\vegas\\homework\\layer\\FileWriter.txt");
+        //File file = new Fil
+        // e("C:\\vegas\\homework\\layer\\FileWriter.txt");
         FileWriter fr = null;
         try {
             fr = new FileWriter(file);

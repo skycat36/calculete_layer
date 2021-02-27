@@ -13,7 +13,7 @@ public class VariableB {
     public static List<List<Double>> calculateMatrixB(int L, int i) throws RuntimeException{
 
         RealMatrix result = MatrixUtils.createRealMatrix(Objects.requireNonNull(MatrixConverter.convert(VariableD.calculateMatrixD(L, i))));
-        while (i > 0){
+        while (i > 1){
             i--;
             result = result.multiply(MatrixUtils.createRealMatrix(Objects.requireNonNull(MatrixConverter.convert(VariableD.calculateMatrixD(L, i)))));
         }
